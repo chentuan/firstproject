@@ -1,0 +1,32 @@
+# websnap 站点配置：localhost:8080
+#
+# 自动探测跑得通就不需要这个文件。它的用途是：把探测结果固化下来，
+# 以及在探测不准的时候人工纠正。密码故意不写在这里——配置会进版本库。
+
+[site]
+name = "localhost:8080"
+base_url = "http://localhost:8080"
+timeout = 15.0
+verify = true
+
+[auth]
+# auto = 自动探测登录表单；none = 站点不需要登录
+mode = "auto"
+login_path = "/login"
+username = "admin"
+# 探测结果，一般不用改
+username_field = "username"
+password_field = "password"
+
+[menus]
+# 留空 = 用内置的语义选择器自动找导航区；写上则只用这里列的
+nav_selectors = ["aside"]
+# 留空 = 用内置默认排除词（logout / 退出 / 注销 等）
+exclude = []
+min_links = 3
+
+[extract]
+# auto | table | list | cards | kv | text
+mode = "auto"
+# 留空表示整个页面；写选择器可以把范围限定到内容区，比如 main 或 #content
+selector = ""

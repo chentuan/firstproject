@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "websnap"
+version = "0.1.0"
+description = "按菜单抓取 Web 后台数据的通用工具：引擎通用，配置逐系统"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = []
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Topic :: Internet :: WWW/HTTP",
+]
+
+[project.scripts]
+websnap = "websnap.cli:main"
+
+[tool.setuptools]
+packages = ["websnap"]
